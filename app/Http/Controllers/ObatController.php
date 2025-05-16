@@ -12,8 +12,8 @@ class ObatController extends Controller
      */
     public function index()
     {
-        $obat = Obat::all();
-        return view('pages.obat.index', compact('obat'));
+        $obats = Obat::all();
+        return view('pages.obat.index', compact('obats'));
     }
 
     /**
@@ -42,10 +42,10 @@ class ObatController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
+    // public function show(string $id)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
