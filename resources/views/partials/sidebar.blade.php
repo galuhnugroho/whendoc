@@ -17,7 +17,8 @@
                     <span class="hide-menu">Home</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ request()->is('dashboard') ? 'active' : '' }}"
+                        href="{{ route('dashboard') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-layout-dashboard"></i>
                         </span>
@@ -29,7 +30,8 @@
                     <span class="hide-menu">COMPONENTS</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('obat.index') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ request()->is('obat*') ? 'active' : '' }}"
+                        href="{{ route('obat.index') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-article"></i>
                         </span>
@@ -37,11 +39,21 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('poli.index') }}" aria-expanded="false">
+                    <a class="sidebar-link {{ request()->is('poli*') ? 'active' : '' }}"
+                        href="{{ route('poli.index') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-article"></i>
                         </span>
                         <span class="hide-menu">Poli</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link {{ request()->is('dokter*') ? 'active' : '' }}"
+                        href="{{ route('dokter.index') }}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                        <span class="hide-menu">Dokter</span>
                     </a>
                 </li>
         </nav>

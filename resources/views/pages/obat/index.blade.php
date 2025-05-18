@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Obat')
+
 @section('content')
     <div class="container-fluid">
         <div class="card">

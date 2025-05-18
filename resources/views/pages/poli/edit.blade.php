@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Edit Poli')
+
 @section('content')
     @extends('layouts.main')
 

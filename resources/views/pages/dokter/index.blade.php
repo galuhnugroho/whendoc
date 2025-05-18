@@ -1,33 +1,37 @@
 @extends('layouts.main')
 
-@section('title', 'Poli')
+@section('title', 'Dokter')
 
 @section('content')
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title fw-semibold mb-4">DAFTAR POLI</h5>
-                <a href="{{ route('poli.create') }}" class="btn btn-primary m-1">Tambah</a>
+                <h5 class="card-title fw-semibold mb-4">DAFTAR DOKTER</h5>
+                <a href="{{ route('dokter.create') }}" class="btn btn-primary m-1">Tambah</a>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Nama Poli</th>
-                                <th>Keterangan</th>
+                                <th>Nama</th>
+                                <th>Alamat</th>
+                                <th>No. Hp</th>
+                                <th>Poli</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($polis as $poli)
+                            @foreach ($dokters as $dokter)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $poli->nama_poli }}</td>
-                                    <td>{{ $poli->keterangan }}</td>
+                                    <td>{{ $dokter->nama }}</td>
+                                    <td>{{ $dokter->alamat }}</td>
+                                    <td>{{ $dokter->no_hp }}</td>
+                                    <td>{{ $dokter->poli?->nama_poli ?? '-' }}</td>
                                     <td>
-                                        <a href="{{ route('poli.edit', $poli->id) }}"
+                                        <a href="{{ route('dokter.edit', $dokter->id) }}"
                                             class="btn btn-warning btn-sm m-1">Edit</a>
-                                        <form action="{{ route('poli.destroy', $poli->id) }}" method="POST"
+                                        <form action="{{ route('dokter.destroy', $dokter->id) }}" method="POST"
                                             class="d-inline">
                                             @method('DELETE')
                                             @csrf
